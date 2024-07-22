@@ -1,0 +1,91 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+button, a.boton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover, a.boton:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+button:active, a.boton:active {
+    background-color: #388e3c;
+}
+
+#txtMostrar {
+    font-size: 1.2em;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+table {
+    animation: fadeIn 1s ease-in;
+}

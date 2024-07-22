@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sumar Arreglo</title>
+    <script>
+          function sumarArreglo(arr) {
+            return arr.reduce((acc, num) => acc + num, 0);
+        }
+
+        document.getElementById('formSuma').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const numeros = document.getElementById("txtArreglo").value
+                .split(',')
+                .map(num => num.trim())
+                .map(Number);
+
+            if (numeros.some(isNaN)) {
+                document.getElementById("txtMostrar").textContent = 'Por favor, ingresa un arreglo de números válido.';
+            } else {
+                const suma = sumarArreglo(numeros);
+                document.getElementById("txtMostrar").textContent = `La suma de los números es: ${suma}`;
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>Sumar elementos de un arreglo</h1>
+    <table>
+        <form id="formSuma">
+            <tr>
+                <th>Suma de un Arreglo</th>
+            </tr>
+            <tr>
+                <td>Ingresa los números separados por comas:</td>
+                <td><input type="text" id="txtArreglo" name="txtArreglo" required></td>
+            </tr>
+            <tr>
+                <td>Resultado</td>
+                <td><div name="txtMostrar" id="txtMostrar"></div></td>
+            </tr>
+            <tr>
+                <td><button onclick="sumarArreglo()">Sumar Arreglo</button></td>
+            </tr>
+            
+        </form>
+    </table>
+    <button onclick="window.location.href='main.html'">Volver al Menú</button>
+</body>
+</html>
